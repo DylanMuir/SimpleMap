@@ -51,7 +51,8 @@ The benefit of `SimpleMap` being a `handle` class, is to enable persistent data 
 
 ### Empty the map
 ```
->> empty(smObj)
+>> empty(smObj);
+>> smObj
 smObj = 
 SimpleMap containing 0 stored values, max index of 0.
 ```
