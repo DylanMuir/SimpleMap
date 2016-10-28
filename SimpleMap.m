@@ -8,6 +8,10 @@
 %                      b = smObj(3); <- Empty matrix
 %
 % SimpleMaps are a handle class.
+%
+% Methods: spy - Return the sparsity structure of the map
+%          find - Return the indices containing data in the map
+%          empty - Clear the contents of the map
 
 % Author: Dylan Muir <dylan.muir@unibas.ch>
 % Created: 26th October, 2016
@@ -58,6 +62,10 @@ classdef SimpleMap < handle
       end
       
       function disp(smObj)
+         % disp - METHOD Display a short summary of the map
+         %
+         % Usage: disp(sbObj)
+         
          nNumStored = nnz(spy(smObj));
          nMaxIndex = numel(smObj.cMap);
          fprintf('<a href="matlab:helpPopup SimpleMap">SimpleMap</a> containing %d stored values, max index of %d.\n', nNumStored, nMaxIndex);
@@ -85,6 +93,15 @@ classdef SimpleMap < handle
          
          % - Return the indices from the sparsity pattern
          vnDataIndices = find(spy(smObj));
+      end
+      
+      function empty(smObj)
+         % empty - METHOD Clear the contents of the map
+         %
+         % Usage: empty(smObj)
+         
+         % - Empty the map
+         smObj.cMap = {};
       end
    end
 end

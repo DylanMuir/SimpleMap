@@ -49,6 +49,13 @@ Map 1
 ```
 The benefit of `SimpleMap` being a `handle` class, is to enable persistent data store within objects that are not themselves `handle` classes.
 
+### Empty the map
+```
+>> empty(smObj)
+smObj = 
+SimpleMap containing 0 stored values, max index of 0.
+```
+
 ## Using a `SimpleMap` for persistent data storage within a value class
 ```
 classdef ValueClass
