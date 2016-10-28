@@ -26,9 +26,9 @@ classdef SimpleMap < handle
          %        oOutput = subsref(smObj, S)
          
          % - Check subscript
-         if (~isscalar(S) || ~strcmp(S.type, '()'))
+         if (~isscalar(S.subs) || ~strcmp(S.type, '()'))
             error('SimpleMap:subsref:LimitedIndexing', ...
-               'Only ''()'' indexing is supported by a SimpleMap object');
+               'Only linear ''()'' indexing is supported by a SimpleMap object');
          end
          
          % - Check map cache
@@ -48,9 +48,9 @@ classdef SimpleMap < handle
          %        smObj = subsasgn(smObj, S, o)
 
          % - Check subscript
-         if (~isscalar(S) || ~strcmp(S.type, '()'))
+         if (~isscalar(S.subs) || ~strcmp(S.type, '()'))
             error('SimpleMap:subsref:LimitedIndexing', ...
-               'Only ''()'' indexing is supported by a SimpleMap object');
+               'Only linear ''()'' indexing is supported by a SimpleMap object');
          end
          
          % - Assign to cache
