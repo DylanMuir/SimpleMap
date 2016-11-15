@@ -61,10 +61,15 @@ SimpleMap containing 0 stored values, max index of 0.
 ```
 classdef ValueClass
 	properties (Hidden)
-		smPersistent = SimpleMap;
+		smPersistent;
 	end
 	
 	methods
+		function ValueClass
+			% - Initialise with an empty map
+			smPersistent = SimpleMap();
+		end
+		
 		function fResult = LongCalculation(vcObj, nIndex)
 			% - Check whether the result has already been calculated
 			if (~isempty(vcObj.smPersistent(nIndex)))
